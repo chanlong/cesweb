@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.cesgroup.cesweb.common.oss.config.OssAutoConfiguration

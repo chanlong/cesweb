@@ -1,0 +1,61 @@
+.body__crud.avue-crud {
+  .avue-crud__search {
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.05);
+    margin: -20px -20px 20px -20px;
+    padding-top: 20px;
+  }
+  .avue-crud__menu {
+    padding: 0;
+  }
+}
+
+.avue-crud {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  &__search,
+  &__header {
+    border-top: 2px solid #409EFF;
+    border-radius: 4px;
+  }
+  &__header,
+  &__menu {
+    padding: 0 10px;
+    padding-top: 15px;
+  }
+  &__header {
+    margin-bottom: 0;
+  }
+  &__search {
+    padding-top: 20px;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.05);
+  }
+  &__noseach {
+    .avue-crud__menu {
+      border-top: 2px solid #409EFF;
+      border-radius: 4px;
+      padding: 0 10px;
+      padding-top: 10px;
+    }
+  }
+  &__pagination {
+    padding: 10px 20px;
+  }
+  &__dialog {
+    &__header {
+      flex: 1;
+    }
+  }
+}
+
+.avue--detail {
+  .el-form-item__label{
+    padding-top: 5px;
+  }
+  .el-form-item__content {
+    padding: 5px 0;
+    border: 1px solid #f5f7fa;
+    border-radius: 6px;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.05);
+  }
+}

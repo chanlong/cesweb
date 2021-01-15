@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-common</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-common-log</artifactId>
+	<name>cesweb-common-log</name>
+	<packaging>jar</packaging>
+
+	<description>cesweb 日志工具类</description>
+	
+	<dependencies>
+		<!--工具类核心包-->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-core</artifactId>
+		</dependency>
+		
+		<!--UPMS接口模块-->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-api-system</artifactId>
+		</dependency>
+		
+		<!--安全依赖获取上下文信息-->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+	</dependencies>
+</project>

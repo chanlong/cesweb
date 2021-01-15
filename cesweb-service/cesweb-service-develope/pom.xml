@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-service</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-service-develope</artifactId>
+	<name>cesweb-service-develope</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<description>cesweb 通用开发管理模块</description>
+
+	<dependencies>
+		<!-- cesweb cloud 依赖 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-cloud-boot</artifactId>
+		</dependency>
+		
+		<!-- cesweb common 依赖 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-boot</artifactId>
+		</dependency>
+		
+		<!--代码生成模板引擎-->
+		<dependency>
+			<artifactId>velocity</artifactId>
+			<groupId>org.apache.velocity</groupId>
+			<version>${velocity.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+					<images>
+						<image>
+                            <run>
+                            	<ports>9995:9995</ports>
+                            </run>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

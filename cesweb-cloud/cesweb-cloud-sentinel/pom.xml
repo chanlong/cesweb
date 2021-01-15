@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-cloud</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-cloud-sentinel</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>cesweb-cloud-sentinel</name>
+	<description>sentinel 服务降级、熔断、限流组件</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-core</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+		</dependency>
+		
+		<!--feign 依赖-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+	</dependencies>
+</project>

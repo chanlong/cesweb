@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-api</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-api-system</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>cesweb-api-system</name>
+	<description>服务调用API聚合模块-系统管理模块公共api</description>
+	
+	<dependencies>
+		<!-- core 工具类 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-core</artifactId>
+		</dependency>
+	
+		<!-- feign 工具类 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-cloud-feign</artifactId>
+		</dependency>
+	</dependencies>
+</project>

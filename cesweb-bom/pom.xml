@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<artifactId>cesweb-bom</artifactId>
+	<groupId>cn.cesgroup.cesweb</groupId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	
+	<description>cesweb 公共版本控制</description>
+
+	<properties>
+		<cesweb.version>1.0.0</cesweb.version>
+
+		<druid.version>1.1.22</druid.version>
+		<dynamic-ds.version>3.2.1</dynamic-ds.version>
+		<mybatis-plus.version>3.3.2</mybatis-plus.version>
+		<mysql.connector.version>8.0.20</mysql.connector.version>
+		
+		<ijpay.version>2.6.3</ijpay.version>
+		<groovy.version>3.0.4</groovy.version>
+		<swagger.version>1.6.2</swagger.version>
+		<fastjson.version>1.2.72</fastjson.version>
+		<mp.weixin.version>3.8.0</mp.weixin.version>
+		<aliyun.version>4.10.38.ALL</aliyun.version>
+		<spring.checkstyle.version>0.0.22</spring.checkstyle.version>
+		<security.oauth.version>2.3.8.RELEASE</security.oauth.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- cesweb cloud 组件 -->
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-cloud-boot</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-cloud-gray</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-cloud-feign</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-cloud-router</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-cloud-sentinel</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			
+			<!-- cesweb common 组件 -->
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-boot</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-log</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-oss</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-core</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-swagger</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-data</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-security</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-common-datasource</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-api-system</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-api-tenant</artifactId>
+				<version>${cesweb.version}</version>
+			</dependency>
+			
+			<!--mybatis plus extension,包含了mybatis plus core -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-extension</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
+			<!--mybatis -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus-boot-starter</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
+			<!--mybatis plus 动态数据源 -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+				<version>${dynamic-ds.version}</version>
+			</dependency>
+
+			<!-- druid 连接池 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+
+			<!--mysql 驱动 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.connector.version}</version>
+			</dependency>
+
+			<!--fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<!--swagger2 依赖 -->
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>${swagger.version}</version>
+			</dependency>
+
+			<!--微信依赖 -->
+			<dependency>
+				<groupId>com.github.binarywang</groupId>
+				<artifactId>weixin-java-mp</artifactId>
+				<version>${mp.weixin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.binarywang</groupId>
+				<artifactId>weixin-java-common</artifactId>
+				<version>${mp.weixin.version}</version>
+			</dependency>
+
+			<!--支付相关SDK -->
+			<dependency>
+				<groupId>com.github.javen205</groupId>
+				<artifactId>IJPay</artifactId>
+				<version>${ijpay.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.alipay.sdk</groupId>
+				<artifactId>alipay-sdk-java</artifactId>
+				<version>${aliyun.version}</version>
+			</dependency>
+
+			<!-- 定义groovy 版本 -->
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy</artifactId>
+				<version>${groovy.version}</version>
+			</dependency>
+
+			<!-- 稳定版本，替代spring security bom内置 -->
+			<!-- 此版本为2.3.8，是最后一个稳定版本，2.3.8以上oauth2出现重大变革，大部分类均被标记为已过时 -->
+			<!-- 待官方新版本稳定后，考虑调整整个安全框架部分 -->
+			<dependency>
+				<groupId>org.springframework.security.oauth</groupId>
+				<artifactId>spring-security-oauth2</artifactId>
+				<version>${security.oauth.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<!--避免和parent bom坐标不一致 -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+        		<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- nothing to do, but we need this to run docker:build form project root -->
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!--代码格式插件，默认使用spring 规则 -->
+			<plugin>
+				<groupId>io.spring.javaformat</groupId>
+				<artifactId>spring-javaformat-maven-plugin</artifactId>
+				<version>${spring.checkstyle.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-plugin</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

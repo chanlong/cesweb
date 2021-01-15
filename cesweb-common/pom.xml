@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>cesweb-common</artifactId>
+	<packaging>pom</packaging>
+
+	<description>cesweb-common聚合模块</description>
+
+	<modules>
+		<module>cesweb-common-boot</module>
+		<module>cesweb-common-core</module>
+	    <module>cesweb-common-data</module>
+	    <module>cesweb-common-security</module>
+	    <module>cesweb-common-datasource</module>
+	    <module>cesweb-common-job</module>
+	    <module>cesweb-common-log</module>
+	    <module>cesweb-common-oss</module>
+	    <module>cesweb-common-sequence</module>
+	    <module>cesweb-common-swagger</module>
+	</modules>
+</project>

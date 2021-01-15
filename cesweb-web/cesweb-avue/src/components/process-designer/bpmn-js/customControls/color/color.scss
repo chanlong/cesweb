@@ -1,0 +1,97 @@
+/* COLOR PICKER */
+
+/* context pad */
+.djs-context-pad .entry {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.6);
+}
+.djs-context-pad .entry:hover {
+  background: rgba(100, 200, 200, 0.15);
+}
+/* 自定义 contextPad 的样式 */
+.djs-context-pad .bpmn-icon-color.entry:hover {
+  background: rgba(100, 200, 200, 0.15) url('./bpmn-js/customControls/color/color.svg') 50% no-repeat;
+  background-size: cover!important;
+}
+
+.bpmn-icon-color {
+  background: url('./bpmn-js/customControls/color/color.svg') 50% no-repeat;
+  background-size: cover!important;
+}
+
+.color-picker {
+
+  .djs-popup-body {
+    width: 170px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .entry {
+      padding: 6px;
+    }
+  }
+}
+
+/* color popup menu */
+[class^="color-icon-"]:before,
+[class*=" color-icon-"]:before {
+  display: inline-block;
+  content: '';
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 4px;
+  border: 0.03em solid black;
+}
+
+.djs-popup-header .entry.color-icon-clear {
+  margin-left: 5px;
+  padding: 0;
+}
+
+.djs-popup-header .entry.color-icon-clear > span {
+  margin-left: 5px;
+}
+
+.color-icon-clear:before {
+  background-color: #ffffff;
+}
+
+.color-icon-red:before {
+  border-color: #CC0033;
+  background-color: rgba(204,0,51,0.45);
+}
+
+.color-icon-orange:before {
+  border-color: #CC6633;
+  background-color: rgba(204,102,51,0.45);
+}
+
+.color-icon-yellow:before {
+  border-color: #FFCC33;
+  background-color: rgba(255,204,51,0.45);
+}
+
+.color-icon-green:before {
+  border-color: #99CC99;
+  background-color: rgba(153,204,153,0.45);
+}
+
+.color-icon-blue:before {
+  border-color: #0066CC;
+  background-color: rgba(0,102,204,0.45);
+}
+
+.color-icon-indigo:before {
+  border-color: #666699;
+  background-color: rgba(102,102,153,0.45);
+}
+
+.color-icon-violet:before {
+  border-color: #663366;
+  background-color: rgba(102,51,102,0.45);
+}
+
+/* transparancy for shapes with colors */
+.color-transparancy {
+  fill-opacity: 0.50;
+}

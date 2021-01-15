@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-cloud</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-cloud-gateway</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>cesweb-cloud-gateway</name>
+	<description>cesweb 网关服务</description>
+	
+	<dependencies>
+		<!-- gateway 网关依赖, 内置webflux依赖 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		
+		<!-- cesweb 公共工具类核心包 -->		
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-core</artifactId>
+		</dependency>
+		
+		<!-- cesweb 动态路由组件 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-cloud-router</artifactId>
+		</dependency>
+		
+		<!-- 注册中心客户端 -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		</dependency>
+		
+		<!-- 配置中心客户端 -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		</dependency>
+		
+		<!-- sentinel 限流 -->
+		<dependency>
+			<groupId>com.alibaba.cloud</groupId>
+			<artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-cloud-sentinel</artifactId>
+		</dependency>
+		
+		<!-- 验证码 -->
+		<dependency>
+            <groupId>com.github.anji-plus</groupId>
+            <artifactId>captcha-spring-boot-starter</artifactId>
+            <version>${kaptcha.version}</version>
+        </dependency>
+        <!-- <dependency>
+		   <groupId>com.github.anji-plus</groupId>
+		   <artifactId>captcha</artifactId>
+		   <version>${kaptcha.version}</version>
+		</dependency> -->
+		
+		<!--接口文档-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		</dependency>
+		
+		<!-- 前端Swagger文档ui模块 -->
+		<dependency>
+			<groupId>com.github.xiaoymin</groupId>
+			<artifactId>knife4j-spring-ui</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+					<images>
+						<image>
+                            <run>
+                            	<ports>9999:9999</ports>
+                            </run>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

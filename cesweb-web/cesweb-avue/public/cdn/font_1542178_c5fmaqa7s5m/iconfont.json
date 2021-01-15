@@ -1,0 +1,499 @@
+{
+  "id": "1542178",
+  "name": "cadmin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "cadmin",
+  "glyphs": [
+    {
+      "icon_id": "11983263",
+      "name": "New File",
+      "font_class": "new",
+      "unicode": "e9ec",
+      "unicode_decimal": 59884
+    },
+    {
+      "icon_id": "15006491",
+      "name": "另存为",
+      "font_class": "save-as",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "15006552",
+      "name": "保存",
+      "font_class": "save-cu",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "15006632",
+      "name": "撤销",
+      "font_class": "revoke",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "15006636",
+      "name": "前进",
+      "font_class": "resume",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "15007631",
+      "name": "预览",
+      "font_class": "yulan",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "544887",
+      "name": "navicon",
+      "font_class": "navicon",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "1160831",
+      "name": "navicon-round",
+      "font_class": "navicon-round",
+      "unicode": "e84f",
+      "unicode_decimal": 59471
+    },
+    {
+      "icon_id": "55531",
+      "name": "QQ",
+      "font_class": "qq",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "213272",
+      "name": "发送队列",
+      "font_class": "send",
+      "unicode": "e71b",
+      "unicode_decimal": 59163
+    },
+    {
+      "icon_id": "1232396",
+      "name": "关闭",
+      "font_class": "close",
+      "unicode": "e71c",
+      "unicode_decimal": 59164
+    },
+    {
+      "icon_id": "1348240",
+      "name": "删除",
+      "font_class": "delete",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "2261663",
+      "name": "队列等待",
+      "font_class": "queue",
+      "unicode": "e81d",
+      "unicode_decimal": 59421
+    },
+    {
+      "icon_id": "3544168",
+      "name": "确定",
+      "font_class": "confirm",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "4266160",
+      "name": "分享",
+      "font_class": "share",
+      "unicode": "e713",
+      "unicode_decimal": 59155
+    },
+    {
+      "icon_id": "6010916",
+      "name": "保存",
+      "font_class": "save",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6366912",
+      "name": "微信",
+      "font_class": "wechat",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "6584496",
+      "name": "关闭",
+      "font_class": "power",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "9322674",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "13592702",
+      "name": "mq 消息队列MQ",
+      "font_class": "mq",
+      "unicode": "e6f0",
+      "unicode_decimal": 59120
+    },
+    {
+      "icon_id": "13636968",
+      "name": "打印",
+      "font_class": "print",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "6627737",
+      "name": "部门管理",
+      "font_class": "dept",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "1010014",
+      "name": "全屏",
+      "font_class": "fullscreen",
+      "unicode": "e743",
+      "unicode_decimal": 59203
+    },
+    {
+      "icon_id": "1621106",
+      "name": "提醒",
+      "font_class": "remind",
+      "unicode": "e701",
+      "unicode_decimal": 59137
+    },
+    {
+      "icon_id": "2056225",
+      "name": "cms",
+      "font_class": "cms",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "5269235",
+      "name": "系统管理",
+      "font_class": "sys",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "6638142",
+      "name": "cms",
+      "font_class": "cms-o",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "7533292",
+      "name": "中英文",
+      "font_class": "i18n",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "9974806",
+      "name": "退出全屏",
+      "font_class": "fullscreen-exit",
+      "unicode": "e71f",
+      "unicode_decimal": 59167
+    },
+    {
+      "icon_id": "11546264",
+      "name": "错误日志",
+      "font_class": "errorlog",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "13638731",
+      "name": "刷新",
+      "font_class": "refresh",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "13923444",
+      "name": "锁屏",
+      "font_class": "lock",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "14163802",
+      "name": "主题",
+      "font_class": "theme",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "16429116",
+      "name": "后台管理-内容管理",
+      "font_class": "book",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "17029878",
+      "name": "流程模型",
+      "font_class": "flow-model",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    },
+    {
+      "icon_id": "587194",
+      "name": "模型管理",
+      "font_class": "data-model",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "605457",
+      "name": "代码生成",
+      "font_class": "codegen",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "2448105",
+      "name": "待办事项",
+      "font_class": "todo-list",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "2448147",
+      "name": "已办事项",
+      "font_class": "done-list",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "5737139",
+      "name": "设计与开发-4",
+      "font_class": "design",
+      "unicode": "eaca",
+      "unicode_decimal": 60106
+    },
+    {
+      "icon_id": "5737143",
+      "name": "设计与开发-6",
+      "font_class": "form",
+      "unicode": "eacb",
+      "unicode_decimal": 60107
+    },
+    {
+      "icon_id": "11121522",
+      "name": "待办事项",
+      "font_class": "todolist",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "11661892",
+      "name": "数据源配置",
+      "font_class": "datasource",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "12889901",
+      "name": "系统管理-模型管理",
+      "font_class": "datamodel",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "17029873",
+      "name": "流程 (1) (1)",
+      "font_class": "process",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "816811",
+      "name": "redis",
+      "font_class": "redis",
+      "unicode": "e6c4",
+      "unicode_decimal": 59076
+    },
+    {
+      "icon_id": "5505806",
+      "name": "缓存Memcached",
+      "font_class": "memcached",
+      "unicode": "ea02",
+      "unicode_decimal": 59906
+    },
+    {
+      "icon_id": "8631661",
+      "name": "快捷入口_api文档",
+      "font_class": "swagger",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "9278056",
+      "name": "事务",
+      "font_class": "transcation",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "13533364",
+      "name": "txc 全局事务服务",
+      "font_class": "transcation-o",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "14934417",
+      "name": "服务监控",
+      "font_class": "service-monitor",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "584859",
+      "name": "路由",
+      "font_class": "route",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "1067455",
+      "name": "登录令牌",
+      "font_class": "token",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "2959119",
+      "name": "终端在线管理",
+      "font_class": "terminal",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "3702630",
+      "name": "字典管理",
+      "font_class": "dict",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "5452762",
+      "name": "密钥管理",
+      "font_class": "key",
+      "unicode": "e9fd",
+      "unicode_decimal": 59901
+    },
+    {
+      "icon_id": "6429423",
+      "name": "文件管理",
+      "font_class": "file",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "13868594",
+      "name": "定时任务",
+      "font_class": "quartz",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "15652748",
+      "name": "参数管理",
+      "font_class": "config",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1789478",
+      "name": "开发中",
+      "font_class": "develop",
+      "unicode": "e6c5",
+      "unicode_decimal": 59077
+    },
+    {
+      "icon_id": "3590945",
+      "name": "角色管理",
+      "font_class": "role",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "4329914",
+      "name": "用户管理",
+      "font_class": "user",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "5777539",
+      "name": "租户管理",
+      "font_class": "tenant",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "6627746",
+      "name": "流程管理",
+      "font_class": "workflow",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "16372324",
+      "name": "系统监控",
+      "font_class": "monitor",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "17029828",
+      "name": "菜单管理",
+      "font_class": "menu",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "14076064",
+      "name": "权限管理",
+      "font_class": "audit",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "755620",
+      "name": "组件",
+      "font_class": "component",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "10934997",
+      "name": "日志管理",
+      "font_class": "logger",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "10934998",
+      "name": "系统管理",
+      "font_class": "system",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    }
+  ]
+}

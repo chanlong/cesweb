@@ -1,0 +1,113 @@
+package cn.cesgroup.cesweb.common.security.component;
+
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.SpringSecurityMessageSource;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.util.StringUtils;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import cn.cesgroup.cesweb.common.core.constant.CommonConstants;
+import cn.cesgroup.cesweb.common.core.constant.SecurityConstants;
+import cn.cesgroup.cesweb.common.security.exception.OAuth2Exception;
+import cn.cesgroup.cesweb.common.security.service.OAuth2User;
+import cn.hutool.core.map.MapUtil;
+import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
+
+/**
+ * 根据checktoken的结果转化用户信息
+ * <p>描述: </p>
+ * <p>Company: Professional</p>
+ * @author chanlong(陈龙)
+ * @date Jul 10, 2020 2:22:50 PM
+ * @version 1.0.2020
+ */
+@Slf4j
+public class UserAuthenticationConverter implements org.springframework.security.oauth2.provider.token.UserAuthenticationConverter {
+
+	private static final String N_A = "N/A";
+
+	/**
+	 * Extract information about the user to be used in an access token (i.e. for resource
+	 * servers).
+	 * @param authentication an authentication representing a user
+	 * @return a map of key values representing the unique information about the user
+	 */
+	@Override
+	public Map<String, ?> convertUserAuthentication(Authentication authentication) {
+		Map<String, Object> response = new LinkedHashMap<>();
+		response.put(USERNAME, authentication.getName());
+		if (authentication.getAuthorities() != null && !authentication.getAuthorities().isEmpty()) {
+			response.put(AUTHORITIES, AuthorityUtils.authorityListToSet(authentication.getAuthorities()));
+		}
+		return response;
+	}
+
+	/**
+	 * Inverse of {@link #convertUserAuthentication(Authentication)}. Extracts an
+	 * Authentication from a map.
+	 * @param responseMap a map of user information
+	 * @return an Authentication representing the user or null if there is none
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Authentication extractAuthentication(Map<String, ?> responseMap) {
+		if (responseMap.containsKey(USERNAME)) {
+			Collection<? extends GrantedAuthority> authorities = getAuthorities(responseMap);
+			Map<String, ?> map = MapUtil.get(responseMap, SecurityConstants.DETAILS_USER, Map.class);
+			validateTenantId(map);
+			String id = MapUtil.getStr(map, SecurityConstants.DETAILS_USER_ID);
+			String phone = MapUtil.getStr(map, SecurityConstants.DETAILS_PHONE);
+			String avatar = MapUtil.getStr(map, SecurityConstants.DETAILS_AVATAR);
+			String deptId = MapUtil.getStr(map, SecurityConstants.DETAILS_DEPT_ID);
+			String tenantId = MapUtil.getStr(map, SecurityConstants.DETAILS_TENANT_ID);
+			String username = MapUtil.getStr(map, SecurityConstants.DETAILS_USERNAME);
+			OAuth2User user = new OAuth2User(id, deptId, phone, avatar, tenantId, username, N_A, true, true, true, true, authorities);
+			return new UsernamePasswordAuthenticationToken(user, N_A, authorities);
+		}
+		return null;
+	}
+
+	private Collection<? extends GrantedAuthority> getAuthorities(Map<String, ?> map) {
+		Object authorities = map.get(AUTHORITIES);
+		if (authorities instanceof String) {
+			return AuthorityUtils.commaSeparatedStringToAuthorityList((String) authorities);
+		}
+		if (authorities instanceof Collection) {
+			return AuthorityUtils.commaSeparatedStringToAuthorityList(StringUtils.collectionToCommaDelimitedString((Collection<?>) authorities));
+		}
+		return AuthorityUtils.NO_AUTHORITIES;
+	}
+
+	private void validateTenantId(Map<String, ?> map) {
+		String headerValue = getCurrentTenantId();
+		Integer userValue = MapUtil.getInt(map, SecurityConstants.DETAILS_TENANT_ID);
+		if (StrUtil.isNotBlank(headerValue) && !userValue.toString().equals(headerValue)) {
+			log.warn("请求头中的租户ID({})和用户的租户ID({})不一致", headerValue, userValue);
+			// TODO: 不要提示租户ID不对，可能被穷举
+			throw new OAuth2Exception(SpringSecurityMessageSource.getAccessor().getMessage("AbstractUserDetailsAuthenticationProvider.badTenantId", "Bad tenant ID"));
+		}
+	}
+
+	private Optional<HttpServletRequest> getCurrentHttpRequest() {
+		return Optional.ofNullable(RequestContextHolder.getRequestAttributes())
+						.filter(requestAttributes -> ServletRequestAttributes.class.isAssignableFrom(requestAttributes.getClass()))
+						.map(requestAttributes -> ((ServletRequestAttributes) requestAttributes))
+						.map(ServletRequestAttributes::getRequest);
+	}
+
+	private String getCurrentTenantId() {
+		return getCurrentHttpRequest().map(httpServletRequest -> httpServletRequest.getHeader(CommonConstants.TENANT_ID)).orElse(null);
+	}
+
+}

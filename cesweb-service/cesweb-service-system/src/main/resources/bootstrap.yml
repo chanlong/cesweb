@@ -1,0 +1,23 @@
+server:
+  port: 9996
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: '@artifactId@'
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:192.168.0.8}:${NACOS_PORT:8848}
+        #server-addr: ${NACOS_HOST:106.12.5.251}:${NACOS_PORT:8848}
+        #ip: ${GATEWAY_HOST:106.12.5.251}
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  autoconfigure:
+    exclude: org.springframework.cloud.gateway.config.GatewayAutoConfiguration,org.springframework.cloud.gateway.config.GatewayClassPathWarningAutoConfiguration
+  profiles:
+    active: '@profiles.active@'

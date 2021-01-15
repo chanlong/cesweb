@@ -1,0 +1,24 @@
+
+// 表格界面列表元素样式重制
+.basic-container {
+  .avue-crud {
+    width: 100%;
+  }
+}
+
+// 表格界面搜索栏样式
+.search-form-inline {
+  .avue-form__group {
+    align-items: center;
+    // 祛除表单元素的 margin-bottom
+    .avue-form__row,
+    .avue-form__menu--left {
+      margin-bottom: 0;
+      padding-left: 0!important;
+      .avue-form__item--,
+      .el-form-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

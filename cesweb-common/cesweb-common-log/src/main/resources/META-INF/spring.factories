@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    cn.cesgroup.cesweb.common.log.config.LogAutoConfiguration
+org.springframework.context.ApplicationContextInitializer=\
+    cn.cesgroup.cesweb.common.log.init.ApplicationLoggerInitializer

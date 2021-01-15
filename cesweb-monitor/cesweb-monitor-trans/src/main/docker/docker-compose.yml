@@ -1,0 +1,20 @@
+version: '2'
+services:
+  cesweb-monitor-trans:
+    build: 
+      context: .
+    image: cesweb-monitor-trans:1.0.0
+    restart: always
+    ports:
+      - 5002:5002
+    networks:
+      - server_net
+    external_links:
+      - server-redis:redis
+    environment:
+      REDIS_HOST: redis
+networks:
+  server_net:
+    external: true
+        
+    

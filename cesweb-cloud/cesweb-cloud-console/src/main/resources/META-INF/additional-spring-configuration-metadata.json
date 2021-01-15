@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "auth.username",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.username'"
+  },
+  {
+    "name": "auth.password",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.password'"
+  },
+  {
+    "name": "auth.filter.exclude-urls",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.filter.exclude-urls'"
+  },
+  {
+    "name": "auth.filter.exclude-url-suffixes",
+    "type": "java.lang.String",
+    "description": "A description for 'auth.filter.exclude-url-suffixes'"
+  },
+  {
+    "name": "sentinel.dashboard.version",
+    "type": "java.lang.String",
+    "description": "A description for 'sentinel.dashboard.version'"
+  }
+]}

@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  # 网关
+  cesweb-cloud-gateway:
+    image: harbor.chanlong.online/cesweb/cesweb-cloud-gateway:1.0.0
+    container_name: cesweb-cloud-gateway
+    restart: always
+    ports:
+      - 9999:9999
+    networks:
+      - cesweb_net
+    volumes:
+      - ./logs/:./logs/
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+  # 鉴权
+  cesweb-service-auth:
+    image: harbor.chanlong.online/cesweb/cesweb-service-auth:1.0.0
+    container_name: cesweb-service-auth
+    restart: always
+    ports:
+      - 9998:9998
+    networks:
+      - cesweb_net
+    volumes:
+      - ./logs/:./logs/
+    depends_on:
+      - cesweb-cloud-gateway
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+  # 系统管理模块
+  cesweb-kernal-system-app:
+    image: harbor.chanlong.online/cesweb/cesweb-kernal-system-app:1.0.0
+    container_name: cesweb-kernal-system-app
+    restart: always
+    ports:
+      - 9996:9996
+    depends_on:
+      - cesweb-cloud-gateway
+      - cesweb-service-auth
+    networks:
+    volumes:
+      - ./logs/:./logs/
+      - cesweb_net
+    environment:
+      TZ: Asia/Shanghai
+      LANG: en_US.UTF-8
+      
+networks:
+  cesweb_net:
+    external: true

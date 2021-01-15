@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.cesgroup.cesweb.common.security.component.GlobalExceptionHandlerResolver,\
+  cn.cesgroup.cesweb.common.security.component.SecurityTokenEnhancer,\
+  cn.cesgroup.cesweb.common.security.component.SecurityInnerAspect,\
+  cn.cesgroup.cesweb.common.security.listener.AuthenticationFailureEventListener,\
+  cn.cesgroup.cesweb.common.security.listener.AuthenticationSuccessEventListener
+

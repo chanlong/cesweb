@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<artifactId>cesweb-service</artifactId>
+	<packaging>pom</packaging>
+
+	<description>系统内置微服务聚合模块</description>
+
+	<modules>
+		<module>cesweb-service-auth</module>
+		<module>cesweb-service-quartz</module>
+		<module>cesweb-service-system</module>
+    	<module>cesweb-service-tenant</module>
+		<module>cesweb-service-workflow</module>
+    	<module>cesweb-service-develope</module>
+  </modules>
+</project>

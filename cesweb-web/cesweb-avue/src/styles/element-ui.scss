@@ -1,0 +1,103 @@
+// 模态对话框
+.el-dialog {
+  &__header {
+    background: linear-gradient(to bottom, white 0%, #fafafa 50%, whitesmoke 100%);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    border-radius: 2px 2px 0 0;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__footer {
+    background: linear-gradient(to bottom, white 0%, whitesmoke 50%, #f0f0f0 100%);
+    padding: 15px 20px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0,.15);
+  }
+}
+.el-dialog__wrapper {
+  z-index: 2048;
+}
+
+// 分页
+.el-pagination button:disabled {
+  background-color: transparent;
+}
+.el-pager li {
+  background-color: transparent;
+}
+
+.el-form {
+  .el-collapse-item {
+    &__content {
+      padding-bottom: 0;
+    }
+  }
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: 100%;
+  }
+  .el-select {
+    display: block;
+  }
+}
+
+.el-dropdown-menu__item {
+    font-size: 12px !important;
+    line-height: 28px !important;
+}
+.el-card.is-always-shadow {
+    box-shadow: none;
+    border: none !important;
+}
+
+.el-scrollbar__view {
+    height: 100%;
+}
+
+.el-menu--horizontal {
+    border-bottom: none !important;
+}
+
+.el-menu {
+    border-right: none !important;
+}
+
+.el-menu--display,
+.el-menu--display+.el-submenu__icon-arrow {
+    display: none;
+}
+
+.el-message__icon,
+.el-message__content {
+    display: inline-block;
+}
+
+.el-date-editor .el-range-input,
+.el-date-editor .el-range-separator {
+    height: auto;
+    overflow: hidden;
+}
+
+.el-col {
+    margin-bottom: 8px;
+}
+
+.el-main {
+    padding: 0 !important;
+}
+.el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
+    background-color:transparent;
+}
+
+.el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover{
+    background-color: transparent !important;
+}
+
+.el-button--mini .el-icon-adapt {
+  font-size: 12px;
+}
+.el-button--medium .el-icon-adapt {
+  font-size: 14px;
+}

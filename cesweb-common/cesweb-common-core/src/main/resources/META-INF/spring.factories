@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  cn.cesgroup.cesweb.common.core.config.JacksonConfig,\
+  cn.cesgroup.cesweb.common.core.config.MessageSourceConfig,\
+  cn.cesgroup.cesweb.common.core.config.RestTemplateConfig,\
+  cn.cesgroup.cesweb.common.core.util.SpringContextHolder
