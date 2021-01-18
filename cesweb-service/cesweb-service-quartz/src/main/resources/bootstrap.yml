@@ -1,5 +1,5 @@
 server:
-  port: 5100
+  port: 9994
 
 # quartz:
   # enabled: true
@@ -10,7 +10,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${NACOS_HOST:106.12.5.251}:${NACOS_PORT:8848}
+        server-addr: ${NACOS_HOST:192.168.0.8}:${NACOS_PORT:8848}
       config:
         server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml

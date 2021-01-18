@@ -11,4 +11,4 @@ EXPOSE 9995
 
 COPY maven /maven/
 
-CMD java $JAVA_OPTS -jar /maven/cesweb-service-system.jar
+CMD java $JAVA_OPTS -jar /maven/cesweb-service-develope.jar

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>cn.cesgroup.cesweb</groupId>
+		<artifactId>cesweb-service</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	
+	<artifactId>cesweb-service-workflow</artifactId>
+	<packaging>jar</packaging>
+	
+	<name>cesweb-service-workflow</name>
+	<description>cesweb 工作流管理模块</description>
+	
+	<dependencies>
+		<!-- cesweb cloud 依赖 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-cloud-boot</artifactId>
+		</dependency>
+		
+		<!-- cesweb common 依赖 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-common-boot</artifactId>
+		</dependency>
+		
+		<!-- 系统管理模块 -->
+		<dependency>
+			<groupId>cn.cesgroup.cesweb</groupId>
+			<artifactId>cesweb-api-system</artifactId>
+		</dependency>
+		
+		<!-- websocket -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		
+		<!-- activiti-->
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring-boot-starter-basic</artifactId>
+            <version>${activiti.version}</version>
+            <exclusions>
+				<exclusion>
+					<groupId>org.mybatis</groupId>
+					<artifactId>mybatis</artifactId>
+				</exclusion>
+			</exclusions>
+        </dependency>
+		<dependency>
+		   <groupId>org.activiti</groupId>
+		   <artifactId>activiti-spring-boot-starter-rest-api</artifactId>
+		   <version>${activiti.version}</version>
+	    </dependency>
+		<dependency>
+		    <groupId>org.activiti</groupId>
+		    <artifactId>activiti-json-converter</artifactId>
+		    <version>${activiti.version}</version>
+		</dependency>
+		<!-- flowable -->
+		<!-- <dependency>
+		    <groupId>org.flowable</groupId>
+		    <artifactId>flowable-spring-boot-starter</artifactId>
+		    <version>${flowable.version}</version>
+		</dependency> -->
+		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<configuration>
+					<skip>false</skip>
+					<images>
+						<image>
+                            <run>
+                            	<ports>7100:7100</ports>
+                            </run>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

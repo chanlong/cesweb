@@ -9,7 +9,7 @@
                                  @on-load="getJobLogList"
                                  @size-change="sizeChange"
                                  @current-change="currentChange"
-                                 @refresh-change="getJobLogList">
+                                 @refresh-change="refreshChange">
         </avue-crud>
       </el-dialog>
     </basic-container>
@@ -63,10 +63,13 @@
         })
       },
       sizeChange(pageSize) {
-        this.page.pageSize = pageSize
+        this.pageLog.pageSize = pageSize
       },
       currentChange(current) {
-        this.page.currentPage = current
+        this.pageLog.currentPage = current
+      },
+      refreshChange(){
+        this.getJobLogList(this.pageLog)
       },
       closeJobLogDialog() {
         this.jobId = ''

@@ -1,0 +1,23 @@
+# 建立本地SSH通道实现内网穿透
+# 外网建立正向隧道 ssh -fCNL *:7000:localhost:7100 localhost
+# 本地建立反向隧道 ssh -fCNR 7100:localhost:7100 -i ./BCC_KEY-k-7YzRzY9L.txt.pub root@106.12.5.251
+# autossh -M 17100 -NR 7100:localhost:7100 -i /Volumes/DEV/devdocker/BCC_KEY-k-7YzRzY9L.txt.pub root@106.12.5.251 &
+
+server:
+  port: 7100
+
+spring:
+  application:
+    name: '@artifactId@'
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_HOST:106.12.5.251}:${NACOS_PORT:8848}
+        ip: ${GATEWAY_HOST:106.12.5.251} # 外网端口转发到本地端口
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: '@profiles.active@'

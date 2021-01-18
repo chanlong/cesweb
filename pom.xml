@@ -1,0 +1,337 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.cesgroup.cesweb</groupId>
+	<artifactId>cesweb</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0</version>
+
+	<name>Archetype - cesweb</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		
+		<!-- maven build 插件 -->
+		<maven.deploy.version>2.8.2</maven.deploy.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		
+		<!-- SpringBoot & SpringCloud & SpringCloudAlibaba -->
+		<spring-boot.version>2.3.1.RELEASE</spring-boot.version>
+		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+		<spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+		<spring.checkstyle.version>0.0.22</spring.checkstyle.version>
+		<spring-boot-admin.version>2.2.3</spring-boot-admin.version>
+		
+		<!-- 全局依赖版本配置 -->
+		<ttl.version>2.11.5</ttl.version>
+		<hutool.version>5.3.8</hutool.version>
+		<jasypt.version>3.0.3</jasypt.version>
+		<guava.version>29.0-jre</guava.version>
+		<xxl.job.version>2.2.0</xxl.job.version>
+		<kaptcha.version>1.2.4</kaptcha.version>
+		<knife4j.version>2.0.4</knife4j.version>
+		<flowable.version>6.5.0</flowable.version>
+		<activiti.version>6.0.0</activiti.version>
+		<velocity.version>1.7</velocity.version>
+		<springfox.version>2.9.2</springfox.version>
+			
+		<!-- docker build 插件 -->
+		<docker.plugin.version>0.32.0</docker.plugin.version>
+		<docker.registry>harbor.chanlong.online</docker.registry>
+		<docker.host>tcp://harbor.chanlong.online:2376</docker.host>
+		<docker.username>admin</docker.username>
+		<docker.password>J978jjkk</docker.password>
+		<docker.namespace>cesweb</docker.namespace>
+		<docker.skip>true</docker.skip>
+		
+		<git.commit.version>2.2.5</git.commit.version>
+	</properties>
+
+	<modules>
+		<module>cesweb-bom</module>
+		<module>cesweb-api</module>
+		<module>cesweb-cloud</module>
+		<module>cesweb-common</module>
+		<module>cesweb-monitor</module>
+		<module>cesweb-service</module>
+	</modules>
+	
+	<dependencies>
+		<!-- SpringBoot自动配置处理器 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<!--jasypt配置文件加解密-->
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>${jasypt.version}</version>
+		</dependency>
+		
+		<!--监控-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
+		<!--监控客户端-->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>${spring-boot-admin.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>${guava.version}</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
+		
+		<!--Lombok-->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!--测试依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<!--cesweb 公共版本定义-->
+			<dependency>
+				<groupId>cn.cesgroup.cesweb</groupId>
+				<artifactId>cesweb-bom</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<!--spring boot 公共版本定义 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<!--spring cloud 公共版本定义 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<!--spring cloud alibaba-->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+			<!-- knife4j -->
+			<dependency>
+	            <groupId>com.github.xiaoymin</groupId>
+	            <artifactId>knife4j-dependencies</artifactId>
+	            <version>${knife4j.version}</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+	        
+			<!--web 模块-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${spring-boot.version}</version>
+				<exclusions>
+					<!--排除tomcat依赖-->
+					<exclusion>
+						<artifactId>spring-boot-starter-tomcat</artifactId>
+						<groupId>org.springframework.boot</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<repositories>
+		<!--阿里云代理-->
+		<repository>
+			<id>aliyun</id>
+			<name>aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-plugin</id>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<!-- 环境标识，需要与配置文件的名称相对应 -->
+				<profiles.active>dev</profiles.active>
+			</properties>
+			<activation>
+				<!-- 默认环境 -->
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<profiles.active>test</profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<profiles.active>prod</profiles.active>
+			</properties>
+		</profile>
+	</profiles>
+	
+	<build>
+		<finalName>${project.name}</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<pluginManagement>
+			<plugins>
+				<!--spring boot 默认插件-->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!--maven  docker 打包插件 -->
+				<plugin>
+					<groupId>io.fabric8</groupId>
+					<artifactId>docker-maven-plugin</artifactId>
+					<version>${docker.plugin.version}</version>
+					<configuration>
+						<!-- 这一部分是为了实现对远程docker容器的控制 -->
+                    	<!-- docker主机远程API地址 -->
+						<dockerHost>${docker.host}</dockerHost>
+						<!-- docker远程访问所需证书路径,如果docker远程主机没有启用TLS验证则不需要配证书 -->
+						<certPath>${project.basedir}/src/main/docker/ssh</certPath>
+						
+						<!-- 这一部分是为了实现docker镜像的构建和推送 -->
+                    	<!-- registry地址,用于推送,拉取镜像,此处使用Harbor本地化仓库 -->
+						<registry>${docker.registry}</registry>
+						<authConfig>
+							<push>
+								<username>${docker.username}</username>
+								<password>${docker.password}</password>
+							</push>
+						</authConfig>
+						
+						<images>
+							<image>
+								<!--镜像名(含版本号)-->
+								<name>${docker.registry}/${docker.namespace}/${project.name}:${project.version}</name>
+                            	<!--镜像build相关配置-->
+	                            <build>
+	                            	<dockerFileDir>${project.basedir}/src/main/docker</dockerFileDir>
+	                                <assembly>
+	                                    <descriptor>docker-assembly.xml</descriptor>
+	                                </assembly>
+	                            </build>
+							</image>
+						</images>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<!--install时跳过test-->
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-surefire-plugin</artifactId>
+		        <configuration>
+	          		<skip>true</skip>
+		        </configuration>
+	      	</plugin>
+			<!--代码格式插件，默认使用spring 规则-->
+			<plugin>
+				<groupId>io.spring.javaformat</groupId>
+				<artifactId>spring-javaformat-maven-plugin</artifactId>
+				<version>${spring.checkstyle.version}</version>
+			</plugin>
+			<!--代码编译指定版本插件-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<target>${maven.compiler.target}</target>
+					<source>${maven.compiler.source}</source>
+					<encoding>UTF-8</encoding>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<!--打包关联最新 git commit 信息插件-->
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>${git.commit.version}</version>
+			</plugin>
+			<!--变量-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<delimiters>
+						<delimiter>@</delimiter>
+					</delimiters>
+					<useDefaultDelimiters>true</useDefaultDelimiters>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

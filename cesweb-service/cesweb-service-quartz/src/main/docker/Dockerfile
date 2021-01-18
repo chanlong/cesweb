@@ -7,8 +7,8 @@ ENV JAVA_OPTS="-Xms128m -Xmx256m -Djava.security.egd=file:/dev/./urandom"
 
 RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-EXPOSE 9999
+EXPOSE 9994
 
 COPY maven /maven/
 
-CMD java $JAVA_OPTS -jar /maven/cesweb-kernel-quartz.jar
+CMD java $JAVA_OPTS -jar /maven/cesweb-service-quartz.jar
