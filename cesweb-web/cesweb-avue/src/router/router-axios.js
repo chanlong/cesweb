@@ -27,7 +27,8 @@
  }
  // 跨域请求，允许保存cookie
  axios.defaults.withCredentials = true
-
+ axios.defaults.crossDomain = true
+ 
  // NProgress Configuration
  NProgress.configure({ showSpinner: false })
 
@@ -84,5 +85,5 @@
 
  // 修复avue-crud组件dicUrl不发送请求的问题
  window.axios = axios
- 
+
  export default axios

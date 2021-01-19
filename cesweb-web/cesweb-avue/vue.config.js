@@ -25,7 +25,7 @@ module.exports = {
             test: new RegExp('\\.(' + productionGzipExtensions.join('|') + ')$'),
             threshold: 1024, // 只有大小大于该值的资源会被处理,当前配置为对于超过1k的数据进行处理，不足1k的可能会越压缩越大
             minRatio: 0.99, // 只有压缩率小于这个值的资源才会被处理
-            deleteOriginalAssets: true // 删除原文件
+            deleteOriginalAssets: false // 删除原文件
           })
         ]
       }

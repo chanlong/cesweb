@@ -23,6 +23,7 @@
 		<dependency>
 			<groupId>cn.cesgroup.cesweb</groupId>
 			<artifactId>cesweb-api-tenant</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		
 		<!-- cesweb cloud 依赖 -->
@@ -36,15 +37,6 @@
 			<groupId>cn.cesgroup.cesweb</groupId>
 			<artifactId>cesweb-common-boot</artifactId>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.3.0</version>
-			<scope>test</scope>
-		</dependency>
-
 	</dependencies>
 	
 	<build>
