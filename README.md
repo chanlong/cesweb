@@ -211,9 +211,9 @@ mvn archetype:generate ^
    -DartifactId=cesweb-service-sample ^
    -Dversion=1.0.0 ^
    -Dpackage=cn.cesgroup.cesweb.service.sample ^
-   -DarchetypeGroupId=com.pig4cloud.archetype ^
-   -DarchetypeArtifactId=pigx-gen ^
-   -DarchetypeVersion=3.11.0 ^
+   -DarchetypeGroupId=cn.cesgroup.cesweb ^
+   -DarchetypeArtifactId=cesweb-archetype ^
+   -DarchetypeVersion=1.0.0 ^
    -DarchetypeCatalog=local
 ```
 
