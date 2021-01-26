@@ -4,6 +4,7 @@
 微服务框架，演示地址：http://cesweb.chanlong.online
 
 #### 技术栈
+```
  1. SpringBoot -------------------- 2.3.1.RELEASE
  2. SpringCloud ------------------- Hoxton.SR6
  3. Spring-cloud-alibaba ---------- 2.2.1.RELEASE
@@ -14,7 +15,7 @@
  8. Redis ------------------------- 6.0.6
  9. JDK --------------------------- 1.8.0_121
 10. Alibaba sentinel-dashboard ---- 1.7.2
-
+```
 
 #### 软件架构
 ```
