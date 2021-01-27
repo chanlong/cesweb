@@ -94,6 +94,7 @@ cesweb
 ```
 mvn archetype:generate -DgroupId=cn.cesgroup.cesweb -DartifactId=cesweb-service-sample -Dversion=1.0.0 -Dpackage=cn.cesgroup.cesweb.service.sample -DarchetypeGroupId=online.chanlong -DarchetypeArtifactId=cesweb-archetype -DarchetypeVersion=1.0.0 -DarchetypeCatalog=local
 ```
+将上述maven构建命令复制到命令行执行即可，其中-DgroupId=项目的groupId，此处可直接使用默认值，也可根据需要自定义；-DartifactId=项目的artifactId，具体值可根据需要自定义；-Dversion指示了cesweb框架的版本，目前为1.0.0版；-Darchetype****为cesweb-archetype项目构建模版的相关配置，保持默认值即可
 
 ##### 二、加载配置文件
 
