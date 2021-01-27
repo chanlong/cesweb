@@ -92,15 +92,7 @@ cesweb
 可使用如下maven命令创建项目，也可使用IDE工具创建项目
 
 ```
-mvn archetype:generate ^
-   -DgroupId=cn.cesgroup.cesweb ^
-   -DartifactId=cesweb-service-sample ^
-   -Dversion=1.0.0 ^
-   -Dpackage=cn.cesgroup.cesweb.service.sample ^
-   -DarchetypeGroupId=online.chanlong ^
-   -DarchetypeArtifactId=cesweb-archetype ^
-   -DarchetypeVersion=1.0.0 ^
-   -DarchetypeCatalog=local
+mvn archetype:generate -DgroupId=cn.cesgroup.cesweb -DartifactId=cesweb-service-sample -Dversion=1.0.0 -Dpackage=cn.cesgroup.cesweb.service.sample -DarchetypeGroupId=online.chanlong -DarchetypeArtifactId=cesweb-archetype -DarchetypeVersion=1.0.0 -DarchetypeCatalog=local
 ```
 
 ##### 二、加载配置文件
